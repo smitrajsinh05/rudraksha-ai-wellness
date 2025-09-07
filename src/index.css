@@ -2,41 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Rudraksha Ayurvedic Design System - Ayurveda-inspired colors and styling */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Ayurveda-inspired color palette */
+    --background: 36 45% 96%; /* Soft Beige #F8F3E7 */
+    --foreground: 28 35% 20%; /* Deep Brown #5A3825 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 36 45% 98%;
+    --card-foreground: 28 35% 20%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 36 45% 98%;
+    --popover-foreground: 28 35% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 28 35% 20%; /* Deep Brown #5A3825 */
+    --primary-foreground: 36 45% 96%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 156 38% 29%; /* Forest Green #2F6B4F */
+    --secondary-foreground: 36 45% 96%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 36 30% 88%;
+    --muted-foreground: 28 20% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 43 74% 49%; /* Saffron Gold #DAA520 */
+    --accent-foreground: 28 35% 20%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --success: 156 38% 29%; /* Forest Green */
+    --success-foreground: 36 45% 96%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 36 45% 96%;
 
-    --radius: 0.5rem;
+    --border: 36 20% 85%;
+    --input: 36 20% 90%;
+    --ring: 28 35% 20%;
+
+    --radius: 0.75rem;
+
+    /* Ayurveda-inspired gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(28 35% 20%), hsl(28 25% 15%));
+    --gradient-secondary: linear-gradient(135deg, hsl(156 38% 29%), hsl(156 48% 35%));
+    --gradient-accent: linear-gradient(135deg, hsl(43 74% 49%), hsl(43 84% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(36 45% 96%), hsl(36 35% 92%));
+    --gradient-nature: linear-gradient(135deg, hsl(156 38% 29%), hsl(43 74% 49%));
+
+    /* Shadows for depth */
+    --shadow-soft: 0 4px 20px hsl(28 35% 20% / 0.08);
+    --shadow-medium: 0 8px 30px hsl(28 35% 20% / 0.12);
+    --shadow-strong: 0 16px 40px hsl(28 35% 20% / 0.16);
+
+    /* Animation variables */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +118,61 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+  }
+}
+
+@layer components {
+  /* Ayurveda-inspired utility classes */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-nature {
+    background: var(--gradient-nature);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .shadow-strong {
+    box-shadow: var(--shadow-strong);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-spring {
+    transition: var(--transition-spring);
+  }
+  
+  /* Ayurveda pattern backgrounds */
+  .pattern-subtle {
+    background-image: radial-gradient(circle at 1px 1px, hsl(28 35% 20% / 0.03) 1px, transparent 0);
+    background-size: 20px 20px;
+  }
+  
+  .glass-effect {
+    background: hsl(36 45% 98% / 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(36 20% 85% / 0.2);
   }
 }
