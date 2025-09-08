@@ -106,9 +106,9 @@ const Index = () => {
               </Button>
               <Button 
                 asChild
-                variant="outline"
+                variant="secondary"
                 size="lg"
-                className="border-white text-white hover:bg-white hover:text-primary transition-smooth"
+                className="bg-white/10 text-white border border-white/30 hover:bg-white hover:text-primary backdrop-blur-sm transition-smooth"
               >
                 <Link to="/shop">Explore Shop</Link>
               </Button>
