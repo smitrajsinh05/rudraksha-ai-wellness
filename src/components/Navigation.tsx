@@ -47,8 +47,8 @@ const Navigation = () => {
               <MessageCircle className="w-4 h-4" />
               Chatbot
             </Button>
-            <Button variant="outline" size="sm">
-              Login
+            <Button asChild variant="outline" size="sm">
+              <Link to="/auth">Login</Link>
             </Button>
           </div>
         </div>

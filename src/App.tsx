@@ -8,6 +8,7 @@ import DoshaQuiz from "./pages/DoshaQuiz";
 import WellnessDashboard from "./pages/WellnessDashboard";
 import Shop from "./pages/Shop";
 import KnowledgeHub from "./pages/KnowledgeHub";
+import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/dashboard" element={<WellnessDashboard />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/knowledge" element={<KnowledgeHub />} />
+          <Route path="/auth" element={<Auth />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
