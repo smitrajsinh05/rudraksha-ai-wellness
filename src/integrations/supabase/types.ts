@@ -14,7 +14,93 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      profiles: {
+        Row: {
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          full_name: string
+          id: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      quiz_results: {
+        Row: {
+          created_at: string
+          dosha_type: string
+          id: string
+          kapha_score: number
+          pitta_score: number
+          responses: Json
+          user_id: string
+          vata_score: number
+        }
+        Insert: {
+          created_at?: string
+          dosha_type: string
+          id?: string
+          kapha_score?: number
+          pitta_score?: number
+          responses: Json
+          user_id: string
+          vata_score?: number
+        }
+        Update: {
+          created_at?: string
+          dosha_type?: string
+          id?: string
+          kapha_score?: number
+          pitta_score?: number
+          responses?: Json
+          user_id?: string
+          vata_score?: number
+        }
+        Relationships: []
+      }
+      user_preferences: {
+        Row: {
+          created_at: string
+          id: string
+          notifications_enabled: boolean | null
+          theme_preference: string | null
+          updated_at: string
+          user_id: string
+          wellness_goals: string[] | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          notifications_enabled?: boolean | null
+          theme_preference?: string | null
+          updated_at?: string
+          user_id: string
+          wellness_goals?: string[] | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          notifications_enabled?: boolean | null
+          theme_preference?: string | null
+          updated_at?: string
+          user_id?: string
+          wellness_goals?: string[] | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
