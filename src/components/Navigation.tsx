@@ -1,9 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
-import { Leaf, MessageCircle } from "lucide-react";
+import { Leaf, MessageCircle, LogOut } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
+import { useToast } from "@/hooks/use-toast";
 
 const Navigation = () => {
   const location = useLocation();
+  const { user, signOut } = useAuth();
+  const { toast } = useToast();
+
+  const handleSignOut = async () => {
+    await signOut();
+    toast({
+      title: "Signed out",
+      description: "You've been successfully signed out.",
+    });
+  };
 
   const navItems = [
     { href: "/", label: "Home" },
@@ -47,9 +59,26 @@ const Navigation = () => {
               <MessageCircle className="w-4 h-4" />
               Chatbot
             </Button>
-            <Button asChild variant="outline" size="sm">
-              <Link to="/auth">Login</Link>
-            </Button>
+            {user ? (
+              <>
+                <Button asChild variant="outline" size="sm">
+                  <Link to="/dashboard">Dashboard</Link>
+                </Button>
+                <Button 
+                  onClick={handleSignOut}
+                  variant="ghost" 
+                  size="sm"
+                  className="flex items-center gap-2"
+                >
+                  <LogOut className="w-4 h-4" />
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <Button asChild variant="outline" size="sm">
+                <Link to="/auth">Login</Link>
+              </Button>
+            )}
           </div>
         </div>
       </div>
